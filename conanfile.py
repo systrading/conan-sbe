@@ -3,7 +3,7 @@ from conans import ConanFile, CMake, tools
 
 class SbeConan(ConanFile):
     name = "sbe"
-    version = "1.12.2"
+    version = "1.26.0"
     license = "Apache License, Version 2.0"
     url = "https://github.com/real-logic/simple-binary-encoding"
     description = "Simple Binary Encoding (SBE) - High Performance Message Codec"
