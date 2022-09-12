@@ -1,0 +1,3 @@
+/app/test_package/build/b574a04261551d861c34701d5ffcf6b325065e28/CMakeFiles/rebuild_cache.dir
+/app/test_package/build/b574a04261551d861c34701d5ffcf6b325065e28/CMakeFiles/edit_cache.dir
+/app/test_package/build/b574a04261551d861c34701d5ffcf6b325065e28/CMakeFiles/example.dir
