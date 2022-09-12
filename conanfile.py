@@ -25,6 +25,3 @@ class SbeConan(ConanFile):
     def package(self):
         self.copy("*.h", dst="include/otf", src="simple-binary-encoding/sbe-tool/src/main/cpp/otf")
         self.copy("*.jar", dst="bin", src="simple-binary-encoding/sbe-all/build", keep_path=False)
-
-    def package_info(self):
-        self.cpp_info.libs = ["simple-binary-encoding"]
