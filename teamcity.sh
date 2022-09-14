@@ -7,6 +7,6 @@ eval $(aws ecr get-login --profile=prod --region ap-southeast-2 | sed -e 's/-e n
 docker pull ${image}
 
 docker run \
-  -v${PWD}:/app:Z 
+  -v${PWD}:/app:Z \
   ${image} \
   ./package.sh
