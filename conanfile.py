@@ -12,6 +12,7 @@ class SbeConan(ConanFile):
     options = {"shared": [True, False]}
     default_options = "shared=False"
     generators = "cmake"
+    build_policy = "missing"
 
     def source(self):
         git = tools.Git(folder="simple-binary-encoding")
