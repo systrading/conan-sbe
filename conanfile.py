@@ -1,4 +1,5 @@
 from conans import ConanFile, CMake, tools
+import os
 
 
 class SbeConan(ConanFile):
@@ -24,5 +25,13 @@ class SbeConan(ConanFile):
         cmake.build()
 
     def package(self):
-        self.copy("*.h", dst="include/otf", src="simple-binary-encoding/sbe-tool/src/main/cpp/otf")
-        self.copy("*.jar", dst="bin", src="simple-binary-encoding/sbe-all/build", keep_path=False)
+        self.copy("*.h", src=os.path.join("simple-binary-encoding","sbe-tool","src","main","cpp","otf"), dst="include/otf")
+        self.copy("*.jar", src=os.path.join("simple-binary-encoding","sbe-all","build","libs"), dst="bin")
+
+    def package_info(self):
+        bin_path = os.path.join(self.package_folder, "bin")
+        self.output.info("Appending PATH environment variable: %s" % bin_path)
+        self.env_info.PATH.append(bin_path)
+
+        self.user_info.sbe_jar = os.path.join(self.package_folder, "bin", "sbe-all-1.26.0.jar").replace("\\","/")
+
